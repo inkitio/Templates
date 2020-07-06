@@ -1,0 +1,207 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+    <title>Inkit Sample 4x6 Postcard Back</title>
+
+    <style>
+        *,
+        *:before,
+        *:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 11.25in;
+            height: 6.25in;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            font-family: "Lato", sans-serif;
+        }
+
+        #extra-area {
+            height: 100%;
+            width: 100%;
+            background-color: #ee4545;
+        }
+
+        #trim-area {
+            width: 11in;
+            height: 6in;
+            /* If using an image, the background image should have dimensions of 1875x1275 pixels. */
+            background: #ff9e2d;
+            position: absolute;
+            left: 0.125in;
+            top: 0.125in;
+        }
+
+        #safe-area {
+            position: absolute;
+            width: 10.875in;
+            height: 5.875in;
+            left: 0.0625in;
+            top: 0.0625in;
+            background-color: #e4fcff;
+        }
+
+        .label {
+            float: right;
+            padding: 2%;
+            font-family: Lato, sans-serif;
+            font-weight: lighter;
+            font-style: italic;
+            color: #0a0a0a;
+        }
+
+        .text {
+            margin-top: 15%;
+            margin-left: 20px;
+            width: 350px;
+            color: black;
+            font-weight: 300;
+            font-size: 24px;
+            font-family: "Lato", sans-serif;
+        }
+
+        .paragraph {
+            position: relative;
+        }
+
+        .description {
+            font-family: "Lato", sans-serif;
+            font-size: 18px;
+            white-space: pre-wrap;
+            margin: 0;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        /*zones*/
+        .extra {
+            color: red;
+        }
+
+        .trim {
+            margin-top: 15%;
+            color: #ffb721;
+        }
+
+        .safe {
+            margin-top: 15%;
+            color: green;
+        }
+
+        /*hr*/
+        .line-wrapper {
+            height: 2px;
+            position: absolute;
+            width: 340px;
+            border-bottom: 1px dashed;
+        }
+
+        .eline {
+            right: 45px;
+        }
+
+        .tline {
+            right: 33px;
+        }
+
+        .sline {
+            right: 25px;
+        }
+
+        /***********/
+        #ink-free {
+            position: absolute;
+            width: 4in;
+            height: 2.375in;
+            right: 0.275in;
+            bottom: 0.25in;
+            background-color: white;
+            border-radius: 15px;
+            border: 2px dashed blue;
+            padding: 10px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+        #postage-indicia {
+            border: 1px dashed blue;
+            border-radius: 10px;
+            width: 1in;
+            height: 0.75in;
+            display: inline-block;
+            float: right;
+            color: blue;
+            text-align: center;
+            padding: 15px 0;
+            text-transform: uppercase;
+        }
+
+        #ink-free-footer {
+            background-color: #0a0a0a;
+            color: white;
+            text-decoration: underline;
+            width: fit-content;
+            text-transform: uppercase;
+            position: absolute;
+            bottom: 0;
+            font-family: "Lato", sans-serif;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+<div id="extra-area">
+    <div id="trim-area">
+        <div id="safe-area">
+            <div class="label">This Is Back Side</div>
+            <!-- All text should appear within the safe area. -->
+            <div class="text">
+                <div class="paragraph extra">
+                    <span class="title">11.25" x 6.25" Extra (Bleed) Size</span>
+                    <pre class="description">
+The bleed is extra space added to the file.
+The postcard will still trimmed to 11" x 6"
+                            </pre>
+                    <div class="line-wrapper eline"></div>
+                </div>
+                <div class="paragraph trim">
+                    <span class="title">11" x 6" Trim Size</span>
+                    <pre class="description">Your postcard will be trimmed to this size</pre>
+                    <div class="line-wrapper tline"></div>
+                </div>
+                <div class="paragraph safe">
+                    <span class="title">8.875" x 5.875" Safe Zone</span>
+                    <pre class="description">Text should be inside this area</pre>
+                    <div class="line-wrapper sline"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Address and postage will be automatically printed here.  -->
+        <!-- Remove this before save/send to Inkit -->
+        <div id="ink-free">
+                    <pre class="description">
+Your customizable return
+adderess is automaticaly
+printed in this position
+
+                    </pre>
+            <div id="postage-indicia">postage indicia</div>
+            <pre id="ink-free-footer">
+recepient name
+and full adderss
+will be printed
+in this place
+                    </pre>
+        </div>
+    </div>
+</div>
+</body>
+</html>
